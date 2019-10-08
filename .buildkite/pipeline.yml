@@ -1,0 +1,9 @@
+cat <<EOF
+env:
+  COMPOSE_FILE: db/docker-compose.yml
+
+steps:
+  - command: bin/ci_build
+    label: ":docker: Build Docker Image"
+    agents:
+      queue: buildkite-elastic

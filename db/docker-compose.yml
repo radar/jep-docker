@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  mongo:
+    image: mongo:3.4
+
+  app:
+    depends_on:
+      - mongo
+    build: .
+    ports:
+      - 4567:4567
